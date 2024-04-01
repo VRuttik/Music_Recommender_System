@@ -1,0 +1,9 @@
+import numpy as np
+import pickle
+
+# Example similarity matrix (random data)
+similarity_matrix = np.random.rand(10, 10)  # Example 10x10 matrix
+
+# Save similarity matrix to a pickle file
+with open('similarity.pkl', 'wb') as f:
+    pickle.dump(similarity_matrix, f)

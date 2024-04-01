@@ -35,8 +35,8 @@ def recommend(song, music, similarity):
     return recommended_music_names, recommended_music_posters
 
 st.header('Music Recommender System')
-music = pickle.load(open('/workspaces/Music_Recommender_System/Application/df.py','rb'))
-similarity = pickle.load(open('similarity.pkl','rb'))
+music = pickle.load(open('/workspaces/Music_Recommender_System/Application/df.pkl','rb'))
+similarity = pickle.load(open('/workspaces/Music_Recommender_System/Application/similarity.pkl','rb'))
 
 music_list = music['song'].values
 selected_song = st.selectbox(
