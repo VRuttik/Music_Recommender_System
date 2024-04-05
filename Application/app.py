@@ -1,4 +1,11 @@
-import pickle
+# Note
+
+# 1. pip install spotipy
+# 2. pip install streamlit
+# 3.run file.py - streamlit run app.py
+
+import pandas as pd
+import joblib
 import streamlit as st
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -35,8 +42,10 @@ def recommend(song, music, similarity):
     return recommended_music_names, recommended_music_posters
 
 st.header('Music Recommender System')
-music = pickle.load(open('/workspaces/Music_Recommender_System/Application/df.pkl','rb'))
-similarity = pickle.load(open('/workspaces/Music_Recommender_System/Application/similarity.pkl','rb'))
+
+# Load data using joblib
+music = joblib.load('/workspaces/Music_Recommender_System/Application/df.pkl')
+similarity = joblib.load('/workspaces/Music_Recommender_System/Application/similarity.pkl')
 
 music_list = music['song'].values
 selected_song = st.selectbox(
